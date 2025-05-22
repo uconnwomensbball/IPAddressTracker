@@ -127,7 +127,7 @@ button:hover{
         gap: 0px; 
         min-width: 100px; 
         width: 220px;  
-        top: 18%; /* fixed distance from the top of header */
+        top: 5%; /* fixed distance from the top of header */
         left: 50%;
     }
     
