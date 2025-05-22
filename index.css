@@ -1,0 +1,152 @@
+*{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Rubik", Arial, Helvetica, sans-serif;
+    background: #27292c;
+    color: white;
+    text-align: center;
+    max-width: 920px; 
+    margin: auto;
+}
+
+.header-container {
+    background-image: url("./images/pattern-bg-desktop.png");
+    background-size: cover;
+    padding: 10px 0px 100px 0px;
+    z-index: 1;
+    margin: 0px; 
+    position: relative;
+}
+
+.header-form-wrapper{
+    position: relative;
+    display: flex; 
+    flex-direction: row; 
+    justify-content: center;
+    align-items: center;
+}
+
+.header-div{
+    margin-bottom: 10px;
+    width: 100%;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.data-container {
+    position: absolute;
+    top: 29%; 
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2;
+    display: flex; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    border-radius: 10px;
+    text-align: center;
+    font-weight: 500;
+    min-width: 480px; 
+    max-width: 620px; 
+    padding: 15px 0px;
+    margin: 0px; 
+}
+
+.data-container>div{
+    padding: 0px 10px;
+}
+
+/*INPUT*/
+input{
+    border-radius: 10px 0px 0px 10px; 
+    padding: 10px;
+    border: none;
+    font-size: .75rem; 
+    cursor: pointer;
+    width: 320px;
+}
+
+/*MAP*/
+#map { 
+    height: 100vh;
+    z-index: 1;
+}
+
+/*BUTTON*/
+button{
+    background-color: hsl(0, 0%, 17%);
+    border-radius: 00px 10px 10px 0px ;  
+    padding: 10px;
+    border: none;
+    cursor: pointer;  
+}
+
+button:hover{
+    background-color: #474747;
+}
+
+/*WARNING*/
+#warning-p{
+    color: red;
+    display: none;
+    border-radius: 5px;
+    margin: 0px;
+    position: absolute;
+    top: 95%;  
+}
+
+/*COLORS*/
+.gray-text{
+    color: hsl(0, 0%, 59%); 
+}
+
+.dark-gray-text{
+    color: hsl(0, 0%, 17%);
+}
+
+/*FONT*/
+.tiny-font{
+    font-size: .65rem; 
+}
+
+/*BORDERS*/
+.border-right{
+    border-right: 1px solid hsl(0, 0%, 17%);  
+}
+
+/*MEDIA QUERIES*/
+@media (max-width: 500px) {
+    .data-container{
+        flex-direction: column;
+        text-align: center;
+        gap: 0px; 
+        min-width: 100px; 
+        width: 220px;  
+        top: 25%; /* fixed distance from the top of header */
+        left: 50%;
+    }
+    
+    .data-container>div{
+      border: none;  
+    }
+    
+    .data-container>div>p{
+        margin: 0px;
+    }
+ 
+    input{
+        width: 70%;
+    }
+    
+    #data-ip-address, #data-location, #data-location, #data-timezone{
+        margin-bottom: 10px; 
+    }
+      #data-ip-address, #data-location, #data-timezone{
+        margin-top: 5px; 
+    }
+}
