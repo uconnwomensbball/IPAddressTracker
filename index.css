@@ -69,6 +69,7 @@ input{
     font-size: .75rem; 
     cursor: pointer;
     width: 320px;
+    font-weight: bold; 
 }
 
 /*MAP*/
