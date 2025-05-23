@@ -37,8 +37,8 @@ body {
 }
 
 .data-container {
-    position: fixed;
-    top: 29%; 
+    position: absolute;
+    top: 30%;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -52,7 +52,6 @@ body {
     font-weight: 500;
     min-width: 400px; 
     padding: 15px 0px;
-    margin: 0px; 
 }
 
 .data-container>div{
