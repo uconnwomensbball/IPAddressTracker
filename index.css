@@ -65,7 +65,7 @@ input{
     border: none;
     font-size: .75rem; 
     cursor: pointer;
-    width: 320px;
+    min-width: 320px; 
     font-weight: bold;
 }
 
@@ -146,6 +146,7 @@ button:hover{
  
     input{
         width: 65%;
+        min-width: unset; 
     }
     
     #data-ip-address, #data-location, #data-location, #data-timezone{
