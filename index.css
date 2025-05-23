@@ -143,10 +143,6 @@ button:hover{
     .data-container>div>p{
         margin: 0px;
     }
- 
-    input{
-        width: 280px;
-    }
     
     #data-ip-address, #data-location, #data-location, #data-timezone{
         margin-bottom: 10px; 
