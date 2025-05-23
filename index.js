@@ -5,7 +5,7 @@ const isp = document.getElementById("data-isp")
 const userInput = document.getElementById("user-input")
 const searchBtn = document.getElementById("search-btn")
 const mapImage = document.getElementById("map")
-const warningP = document.getElementById("warning-p")
+const warningText = document.getElementById("warning-text")
 
 //initializes map
 let map = L.map('map', {zoomControl: true}).setView([0, 0], 13)
@@ -17,38 +17,37 @@ attribution: '© OpenStreetMap contributors'}).addTo(map);
 
 //search button event listener
 searchBtn.addEventListener("click", function(){
-    isValidIPv4(userInput.value)
-    if (userInput.value === "" || isValidIPv4(userInput.value) === false){
-       userInput.style.border = "2px solid red"
-       warningP.style.display = "flex"}
-    else{
-         userInput.style.border = "none"
-         warningP.style.display = "none"
-         searchIpAddress()}
-})
+  
+    if (isValidIP(userInput.value)){
+        searchIpAddress()
+        userInput.style.border = "none"
+        warningText.style.display = "none"
+    }
+    else {
+        userInput.style.border = "2px solid red"
+        warningText.style.display = "flex"}
+    })
 
 //function - checks whether the IP address is valid 
-function isValidIPv4(ip) {
-  const regex = /^(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)){3}$/;
-  return regex.test(ip)
+function isValidIP(input) {
+    const ipRegex = /^(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)(\.(25[0-5]|2[0-4]\d|1\d{2}|[1-9]?\d)){3}$/
+    return ipRegex.test(input)
 }
 
 //function - obtains location info for IP address input by user
 function searchIpAddress(){
-    fetch(`https://geo.ipify.org/api/v2/country,city?apiKey=at_fn7I1HEkeX1p9aJaCQx83yMs1RG1Q&ipAddress=${userInput.value}`)
+    fetch(`https://api.ipgeolocation.io/v2/ipgeo?apiKey=aeeaa58e938c4a71905f6775bcb52080&ip=${userInput.value}`)
     .then(res => res.json())
     .then(data => {
         ipAddress.textContent = data.ip, 
-        location.textContent = `${data.location.region}, ${data.location.country}`,
-        timezone.textContent = `UTC${data.location.timezone}`, 
-        isp.textContent = data.isp,
+        location.textContent = `${data.location.district}, ${data.location.state_prov}, ${data.location.country_code3}`,
         getMap(data)})
 }
 
 //function - gets a new map for every IP address
 function getMap(data){
-    let latitude = data.location.lat
-    let longitude = data.location.lng
+    let latitude = data.location.latitude
+    let longitude = data.location.longitude
     // Sets the view to a new location upon search button click
     map.panTo([latitude, longitude])
     // Adds a marker with a popup
