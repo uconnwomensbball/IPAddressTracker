@@ -134,6 +134,7 @@ button:hover{
         min-width: 100px; 
         top: 180px; 
         left: 50%;
+        padding-top: 20px; 
     }
     
     .data-container>div{
