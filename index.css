@@ -38,7 +38,7 @@ body {
 
 .data-container {
     position: absolute;
-    top: 150px;
+    top: 155px;
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
