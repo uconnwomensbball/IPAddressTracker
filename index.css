@@ -145,7 +145,7 @@ button:hover{
     }
  
     input{
-        width: 65%;
+        width: 100%;
         min-width: unset; 
     }
     
