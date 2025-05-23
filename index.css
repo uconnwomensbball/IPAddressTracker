@@ -22,10 +22,9 @@ body {
 
 .header-form-wrapper{
     position: relative;
-    display: flex; 
-    flex-direction: row; 
+    display: inline-flex;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;
 }
 
 .header-div{
@@ -38,8 +37,8 @@ body {
 }
 
 .data-container {
-    position: absolute;
-    top: 20%; 
+    position: fixed;
+    top: 29%; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 2;
@@ -51,8 +50,7 @@ body {
     border-radius: 10px;
     text-align: center;
     font-weight: 500;
-    min-width: 480px; 
-    max-width: 620px; 
+    min-width: 400px; 
     padding: 15px 0px;
     margin: 0px; 
 }
@@ -69,7 +67,7 @@ input{
     font-size: .75rem; 
     cursor: pointer;
     width: 320px;
-    font-weight: bold; 
+    font-weight: bold;
 }
 
 /*MAP*/
@@ -92,13 +90,19 @@ button:hover{
 }
 
 /*WARNING*/
-#warning-p{
-    color: red;
-    display: none;
-    border-radius: 5px;
-    margin: 0px;
+
+#warning-text{
     position: absolute;
-    top: 95%;  
+    top: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    display: none; 
+    color: white;
+    margin: 0px;
+    font-weight: bold;
+    justify-content: center;
+    align-items: center;
+    font-size: .75rem;
 }
 
 /*COLORS*/
@@ -124,11 +128,12 @@ button:hover{
 @media (max-width: 500px) {
     .data-container{
         flex-direction: column;
+        justify-content: center;
         text-align: center;
         gap: 0px; 
+        width: 60%;
         min-width: 100px; 
-        width: 220px;  
-        top: 18%; /* fixed distance from the top of header */
+        top: 27%; 
         left: 50%;
     }
     
@@ -141,7 +146,7 @@ button:hover{
     }
  
     input{
-        width: 60%;
+        width: 65%;
     }
     
     #data-ip-address, #data-location, #data-location, #data-timezone{
