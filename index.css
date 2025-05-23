@@ -145,8 +145,7 @@ button:hover{
     }
  
     input{
-        width: 100%;
-        min-width: unset; 
+        width: 280px;
     }
     
     #data-ip-address, #data-location, #data-location, #data-timezone{
