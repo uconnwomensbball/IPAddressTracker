@@ -132,7 +132,7 @@ button:hover{
         gap: 0px; 
         width: 60%;
         min-width: 100px; 
-        top: 27%; 
+        top: 20%; 
         left: 50%;
     }
     
@@ -145,7 +145,7 @@ button:hover{
     }
  
     input{
-        width: 65%;
+        width: 95%;
     }
     
     #data-ip-address, #data-location, #data-location, #data-timezone{
